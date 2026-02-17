@@ -1,7 +1,8 @@
 # Mitt CSS-Preproccesorer projekt
 
-Det här är en webbplats som färgläggning och allt sådant är skriven
-med SASS-kod. Jag kommer att bygga vidare på hemsidan i senare laborationer.
+Det här är en webbplats som själva färgläggningen och allt sådant är skriven
+med SASS-kod. Jag har byggt vidare på hemsidan genom att lägga till olika animationer
+på en egen undersida.
 
 ## Länk till publicerad webbplats
-https://css-preproccesorer.onrender.com/
+https://css-preproccesorer-main.onrender.com/animering.html
