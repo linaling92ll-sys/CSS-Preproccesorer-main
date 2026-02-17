@@ -19,5 +19,25 @@
 }
 .fade-text {
     display: inline-block;
-    animation: colorShift 5s infinite;
+    animation: colorShift 3s infinite;
+}
+
+@keyframes slideAcross {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(300px) translateY(20px) rotate(10deg);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.moving-image {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    animation: slideAcross 5s infinite ease-in-out;
 }
