@@ -9,7 +9,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'sass.html')
+        about: resolve(__dirname, 'sass.html'),
+        animation: resolve(__dirname, 'animering.html')
       }
     }
   }
