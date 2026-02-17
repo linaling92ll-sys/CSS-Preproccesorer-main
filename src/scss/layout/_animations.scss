@@ -4,16 +4,20 @@
     0% {
         color: vars.$primary-color;
         text-shadow: none;
+        transform: scale(1);
     }
     50% {
         color: red;
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transform: scale(1.2);
     }
     100% {
         color: vars.$primary-color;
         text-shadow: none;
+        transform: scale(1);
     }
 }
 .fade-text {
+    display: inline-block;
     animation: colorShift 5s infinite;
 }
