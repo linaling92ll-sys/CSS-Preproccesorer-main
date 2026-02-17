@@ -1,0 +1,33 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mixins;
+
+
+%nav-link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include mixins.center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    li {
+      a {
+        @extend %nav-link;
+        color: white;
+        background-color: vars.$primary-color;
+
+        &:hover {
+          background-color: lighten(vars.$primary-color, 20%);
+        }
+      }
+    }
+  }
+}
