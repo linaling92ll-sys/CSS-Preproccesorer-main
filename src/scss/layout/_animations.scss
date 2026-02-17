@@ -1,0 +1,19 @@
+@use '../utils/variables' as vars;
+
+@keyframes colorShift {
+    0% {
+        color: vars.$primary-color;
+        text-shadow: none;
+    }
+    50% {
+        color: red;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        color: vars.$primary-color;
+        text-shadow: none;
+    }
+}
+.fade-text {
+    animation: colorShift 5s infinite;
+}
