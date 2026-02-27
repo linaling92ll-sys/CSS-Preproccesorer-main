@@ -21,7 +21,15 @@
     </nav>
   </header>
   <main>
+    <h2>Sök plats</h2>
+    <form id="mapForm">
+      <input type="text" id="locationInput" placeholder="Skriv in en plats.." required>
+      <button type="submit">Sök</button>
+    </form>
 
+    <div class="map-container">
+      <iframe id="mapFrame" width="100%" height="400" style="border:0;" loading="lazy"></iframe>
+    </div>
   </main>
   <footer>
     &copy;Lina Wiklund<br>
@@ -30,7 +38,7 @@
 
 
 
-
+  <script type="module" src="/src/map.js"></script>
   <script type="module" src="/src/main.js"></script>
 </body>
 
