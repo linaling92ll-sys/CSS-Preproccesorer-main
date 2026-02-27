@@ -24,7 +24,7 @@ function createBarChart(courses) {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: courses.map(c => c.name),
+            labels: courses.map(c => c.name.split(" ")),
             datasets: [{
                 label: 'Totalt antal sökande',
                 data: courses.map(c => Number(c.applicantsTotal.trim())),
@@ -36,18 +36,56 @@ function createBarChart(courses) {
         }
     });
 }
+/**
+ * Skapar cirkeldiagram för program
+ * @param {Array} programs - Lista med program
+ */
+function createPieChart(programs) {
+  const ctx = document.getElementById("pieChart");
+
+  new Chart(ctx, {
+    type: "pie",
+    data: {
+      labels: programs.map(p => p.name),
+      datasets: [{
+        data: programs.map(p =>
+          Number(p.applicantsTotal.trim())
+        ),
+        backgroundColor: [
+          "#3a6ea5",
+          "#ff9f40",
+          "#4bc0c0",
+          "#9966ff",
+          "#ff6384"
+        ]
+      }]
+    },
+    options: {
+      responsive: true
+    }
+  });
+}
 async function init() {
-    const data = await fetchData();
+  const data = await fetchData();
 
-    const topCourses = data
-        .filter(item => item.type === "Kurs")
-        .sort((a, b) =>
-            Number(b.applicantsTotal.trim()) -
-            Number(a.applicantsTotal.trim())
-        )
-        .slice(0, 6);
+  const topCourses = data
+    .filter(item => item.type === "Kurs")
+    .sort((a, b) =>
+      Number(b.applicantsTotal.trim()) -
+      Number(a.applicantsTotal.trim())
+    )
+    .slice(0, 6);
 
-    createBarChart(topCourses);
+  const topPrograms = data
+    .filter(item => item.type === "Program")
+    .sort((a, b) =>
+      Number(b.applicantsTotal.trim()) -
+      Number(a.applicantsTotal.trim())
+    )
+    .slice(0, 5);
+
+  createBarChart(topCourses);
+  createPieChart(topPrograms);
 }
 
 init();
