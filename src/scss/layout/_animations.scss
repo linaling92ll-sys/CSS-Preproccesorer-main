@@ -6,17 +6,20 @@
         text-shadow: none;
         transform: scale(1);
     }
+
     50% {
         color: red;
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         transform: scale(1.2);
     }
+
     100% {
         color: vars.$primary-color;
         text-shadow: none;
         transform: scale(1);
     }
 }
+
 .fade-text {
     display: inline-block;
     animation: colorShift 3s infinite;
@@ -26,13 +29,16 @@
     0% {
         transform: translateX(0);
     }
+
     50% {
         transform: translateX(300px) translateY(20px) rotate(10deg);
     }
+
     100% {
         transform: translateX(0);
     }
 }
+
 .moving-image {
     width: 200px;
     height: auto;
@@ -42,7 +48,7 @@
 }
 
 .animate-btn {
-    padding:1rem 2rem;
+    padding: 1rem 2rem;
     background-color: vars.$primary-color;
     color: white;
     border: none;
@@ -51,6 +57,7 @@
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
 .animate-btn:hover {
     transform: scale(1.2) rotate(5deg);
     background-color: red;

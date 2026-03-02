@@ -9,8 +9,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "jsdoc": "^4.0.5",
     "sass": "^1.97.3",
     "vite": "^7.2.4",
     "vite-plugin-image-optimizer": "^2.0.3"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1"
   }
 }

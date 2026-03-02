@@ -10,7 +10,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         about: resolve(__dirname, 'sass.html'),
-        animation: resolve(__dirname, 'animering.html')
+        animation: resolve(__dirname, 'animering.html'),
+        diagram: resolve(__dirname, 'Diagram.html'),
+        karta: resolve(__dirname, 'Karta.html')
       }
     }
   }
