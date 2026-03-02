@@ -55,4 +55,7 @@ function init() {
     })
 }
 
+/**
+ * Initierar kartfunktionen och kopplar formulärets submit-event.
+ */
 init();

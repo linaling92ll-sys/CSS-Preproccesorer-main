@@ -3,8 +3,10 @@
 import Chart from 'chart.js/auto';
 
 /**
- * Hämtar antagningsdata från extern källa
- * @returns {Promise <array>} JSON-data
+ * Hämtar antagningsdata från extern JSON-fil.
+ * @async
+ * @returns {Promise <array>} En lista med kurs- och programobjekt.
+ * @throws {Error} Om datan inte kan hämtas.
  */
 async function fetchData() {
   const response = await fetch("https://mallarmiun.github.io/Frontend-baserad-webbutveckling/Moment%205%20-%20Dynamiska%20webbplatser/statistik_sokande_ht25.json");
@@ -15,7 +17,7 @@ async function fetchData() {
 }
 
 /**
- * Skapar stapeldiagram
+ * Skapar ett stapeldiagram med de mest sökta kurserna.
  * @param {array} courses - Lista med kurser
  */
 function createBarChart(courses) {
@@ -37,7 +39,7 @@ function createBarChart(courses) {
   });
 }
 /**
- * Skapar cirkeldiagram för program
+ * Skapar cirkeldiagram med de mest sökta programmen.
  * @param {Array} programs - Lista med program
  */
 function createPieChart(programs) {
@@ -88,4 +90,8 @@ async function init() {
   createPieChart(topPrograms);
 }
 
+/**
+ * Initierar diagrammen genom att hämta data,
+ * filtrera och sortera kurser och program.
+ */
 init();
